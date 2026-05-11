@@ -28,6 +28,17 @@
         <li><a href="#projetos">Projetos</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        <!-- Lua: visível no dark mode -->
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+        <!-- Sol: visível no light mode -->
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+      </button>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
         <span></span><span></span><span></span>
       </button>
@@ -171,8 +182,8 @@
           </div>
         </div>
 
-        <div class="glass-card skill-card skill-card--ai" data-delay="400">
-          <div class="skill-icon skill-icon--ai">
+        <div class="glass-card skill-card skill-card--highlight" data-delay="400">
+          <div class="skill-icon skill-icon--accent">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
             </svg>
@@ -180,7 +191,7 @@
           <h3 class="skill-name">Ferramentas &amp; Automação</h3>
           <p class="skill-desc">Domínio de ferramentas modernas de desenvolvimento — incluindo IA, automações e integrações — para agilizar entregas sem abrir mão da qualidade.</p>
           <div class="skill-bar">
-            <div class="skill-fill skill-fill--ai" data-width="95"></div>
+            <div class="skill-fill skill-fill--accent" data-width="95"></div>
           </div>
         </div>
 

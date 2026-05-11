@@ -1,4 +1,20 @@
 /* ============================================
+   TEMA — toggle dark/light com persistência
+   ============================================ */
+const themeToggle = document.getElementById('themeToggle');
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  document.body.classList.add('light');
+}
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  const isLight = document.body.classList.contains('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
+
+/* ============================================
    NAVBAR — efeito scroll
    ============================================ */
 const navbar = document.getElementById('navbar');
@@ -36,9 +52,9 @@ navLinks.querySelectorAll('a').forEach(link => {
    ============================================ */
 const phrases = [
   'Desenvolvedor Web',
-  'Entusiasta de IA',
   'Frontend Developer',
-  'Criador de Soluções',
+  'Criador de Interfaces',
+  'Solucionador de Problemas',
 ];
 
 let phraseIndex = 0;
@@ -76,7 +92,7 @@ setTimeout(type, 1200);
 /* ============================================
    SCROLL ANIMATIONS (IntersectionObserver)
    ============================================ */
-function createObserver(selector, options = {}) {
+function createObserver(selector) {
   const els = document.querySelectorAll(selector);
   if (!els.length) return;
 
@@ -91,7 +107,7 @@ function createObserver(selector, options = {}) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, ...options });
+  }, { threshold: 0.15 });
 
   els.forEach(el => observer.observe(el));
 }
@@ -99,8 +115,7 @@ function createObserver(selector, options = {}) {
 function triggerSkillBar(card) {
   const bar = card.querySelector('.skill-fill');
   if (bar) {
-    const width = bar.dataset.width || 0;
-    bar.style.width = width + '%';
+    bar.style.width = (bar.dataset.width || 0) + '%';
   }
 }
 
@@ -114,7 +129,7 @@ const yearEl = document.getElementById('footerYear');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 /* ============================================
-   SMOOTH ACTIVE NAV LINK
+   ACTIVE NAV LINK ao scroll
    ============================================ */
 const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-links a');
